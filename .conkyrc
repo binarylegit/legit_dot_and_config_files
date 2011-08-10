@@ -1,0 +1,65 @@
+# Conky, a system monitor, based on torsmo
+
+alignment bottom_left
+
+# to place conky transparently over the desktop set background yes, own_window no
+background yes
+own_window yes
+own_window_transparent yes
+double_buffer no
+
+use_xft yes
+xftfont verdana:size=8
+xftalpha 1.0
+
+border_width 1
+cpu_avg_samples 2
+default_color FFFFFF
+default_outline_color FFFFFF
+default_shade_color FFFFFF
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 10
+gap_y 30
+minimum_size 5 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+#own_window_class Conky
+own_window_type desktop
+stippled_borders 0
+update_interval 3.0
+uppercase no
+use_spacer none
+
+TEXT
+${pre_exec cal -s}
+$hr
+$nodename - $sysname $kernel on $machine
+$hr
+Uptime: $uptime
+RAM Usage: $mem/$memmax - $memperc% ${membar 4}
+Swap Usage: $swap/$swapmax - $swapperc% ${swapbar 4}
+Processes: $processes  Running: $running_processes
+$hr
+CPU Temp: ${execi 1100 cat /proc/acpi/thermal_zone/THM/temperature | grep -o "[0-9]* C"}
+CPU
+${cpugraph cpu1 25,120 AA0000 FF0000} $alignr${cpugraph cpu2 25,120 AA0000 FF0000}
+${cpugraph cpu3 25,120 AA0000 FF0000} $alignr${cpugraph cpu4 25,120 AA0000 FF0000}
+$hr
+File systems:
+ / ${fs_free /}/${fs_size /} ${fs_bar 6 /}
+ /home ${fs_free /home}/${fs_size /home} ${fs_bar 6 /home}
+Networking:
+Up $alignr Down
+Eth0:
+${upspeedgraph eth0 15,120 A69D00 FFFF00} $alignr${downspeedgraph eth0 15,120 A69D00 FFFF00}
+$hr
+Name                  PID   CPU%   MEM%
+ ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+ ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+ ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+ ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+$hr

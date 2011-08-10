@@ -1,0 +1,7 @@
+[user]
+	name = Daniel Fowler
+	email = legit@alephcipher.com
+[color]
+	ui = true
+[alias]
+	st = status
