@@ -15,6 +15,7 @@ set noerrorbells
 set foldmethod=syntax
 set foldcolumn=5
 set nofoldenable
+set ignorecase
 
 set tabstop=2
 set expandtab
