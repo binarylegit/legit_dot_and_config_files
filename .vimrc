@@ -24,4 +24,6 @@ colorscheme solarized
 
 imap ;l <ESC>
 
+au BufNewFile,BufRead *.gradle setf groovy
+
 
