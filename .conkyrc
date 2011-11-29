@@ -35,7 +35,10 @@ uppercase no
 use_spacer none
 
 TEXT
-${pre_exec cal -s}
+${font Fixed:size=9}
+#from: http://sethjust.com/2009/08/03/a-useful-calendar-in-conky/
+${execpi 60 DJS=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DJS"'\b'/'\1${color red}'"$DJS"'$color'/}
+$font
 $hr
 $nodename - $sysname $kernel on $machine
 $hr
@@ -44,10 +47,10 @@ RAM Usage: $mem/$memmax - $memperc% ${membar 4}
 Swap Usage: $swap/$swapmax - $swapperc% ${swapbar 4}
 Processes: $processes  Running: $running_processes
 $hr
-CPU Temp: ${execi 1100 cat /proc/acpi/thermal_zone/THM/temperature | grep -o "[0-9]* C"}
+#CPU Temp: ${execi 1100 cat /proc/acpi/thermal_zone/THM/temperature | grep -o "[0-9]* C"}
 CPU
-${cpugraph cpu1 25,120 AA0000 FF0000} $alignr${cpugraph cpu2 25,120 AA0000 FF0000}
-${cpugraph cpu3 25,120 AA0000 FF0000} $alignr${cpugraph cpu4 25,120 AA0000 FF0000}
+${cpugraph cpu1 25,120 AA0000 FF0000 -t} $alignr${cpugraph cpu2 25,120 AA0000 FF0000}
+${cpugraph cpu3 25,120 AA0000 FF0000 -t} $alignr${cpugraph cpu4 25,120 AA0000 FF0000}
 $hr
 File systems:
  / ${fs_free /}/${fs_size /} ${fs_bar 6 /}
