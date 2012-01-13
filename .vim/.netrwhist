@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/dfowler/Workspace/gnip-fanout/batcherator/src/ruby/.bundle'
+let g:netrw_dirhist_2='/Users/dfowler/Workspace/gnip-fanout/batcherator/src/ruby'
+let g:netrw_dirhist_3='/Users/dfowler/Workspace/gnip-fanout/batcherator/src/ruby/.bundle'
