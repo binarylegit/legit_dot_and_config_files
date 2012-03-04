@@ -14,6 +14,7 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+alias ls='ls --color=auto'
 
 # Put your fun stuff here.
 export TERM='xterm-256color'
