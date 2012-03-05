@@ -60,9 +60,12 @@ Up $alignr Down
 Eth0:
 ${upspeedgraph eth0 15,120 A69D00 FFFF00} $alignr${downspeedgraph eth0 15,120 A69D00 FFFF00}
 $hr
-Name                  PID   CPU%   MEM%
+${font Fixed:size=9}
+Name                PID   CPU%   MEM%
+$hr
  ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
  ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
  ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
  ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+$font
 $hr
