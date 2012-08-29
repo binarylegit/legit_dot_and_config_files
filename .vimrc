@@ -2,11 +2,13 @@ set nocompatible
 
 set number
 
+" Mac needs these things
 set ai
 set history=100
 set ruler
 syntax on
 set hlsearch
+set incsearch
 filetype plugin on
 
 set t_Co=256
@@ -25,6 +27,9 @@ colorscheme solarized
 
 imap ;l <ESC>
 
-au BufNewFile,BufRead *.gradle setf groovy
+if has("gui_running")
+set guioptions-=T
+endif
 
+au BufNewFile,BufRead *.gradle setf groovy
 
