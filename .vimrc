@@ -22,8 +22,9 @@ set ignorecase
 set tabstop=2
 set expandtab
 
-colorscheme solarized
+"colorscheme solarized
 "colorscheme desert
+colorscheme liquidcarbon
 
 imap ;l <ESC>
 
