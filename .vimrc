@@ -26,6 +26,7 @@ let g:liquidcarbon_high_contrast=1
 
 "colorscheme solarized
 "colorscheme desert
+" http://www.vim.org/scripts/script.php?script_id=3274
 colorscheme liquidcarbon
 
 imap ;l <ESC>
