@@ -22,6 +22,8 @@ set ignorecase
 set tabstop=2
 set expandtab
 
+let g:liquidcarbon_high_contrast=1
+
 "colorscheme solarized
 "colorscheme desert
 colorscheme liquidcarbon
@@ -33,4 +35,4 @@ set guioptions-=T
 endif
 
 au BufNewFile,BufRead *.gradle setf groovy
-
+"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
