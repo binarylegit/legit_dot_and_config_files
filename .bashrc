@@ -53,8 +53,14 @@ git_prompt ()
 
   echo "$git_color$git_branch${c_reset}|"
 }
- 
-# Thy holy prompt.  PROMPT_COMMAND=''
+
+#json pretty print with curl, from: http://benw.me/posts/colourized-pretty-printed-json-with-curl/
+function jcurl() {
+    curl "$@" | json_pp | pygmentize -l json
+}
+export -f jcurl
+
+# The prompt.  PROMPT_COMMAND=''
 PROMPT_COMMAND='PS1="\[\e[1;32m\][${c_reset}$(git_prompt)\[\e[1;32m\]\u:\W]$\[\e[0m\] "'
 
 # rbenv support
