@@ -14,6 +14,7 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+alias gw='./gradlew "$@"'
 alias ls='ls --color=auto'
 
 # Put your fun stuff here.
