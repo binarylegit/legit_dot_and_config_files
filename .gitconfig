@@ -5,3 +5,8 @@
 	ui = true
 [alias]
 	st = status
+[core]
+; fix line endings on windows
+        autocrlf = true
+; fix line endings on linux
+;        autocrlf = input
